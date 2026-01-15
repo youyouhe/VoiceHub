@@ -1,0 +1,5 @@
+{
+  "name": "VoiceCraft CE",
+  "description": "A privacy-first, local-inference speech synthesis workbench and community gallery.",
+  "requestFramePermissions": []
+}
