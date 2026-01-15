@@ -23,6 +23,7 @@ export const translations: Translations = {
       online: 'ONLINE',
       offline: 'OFFLINE',
       busy: 'BUSY',
+      toggleTheme: 'Toggle Theme',
     },
     gallery: {
       title: 'Community Gallery',
@@ -161,6 +162,7 @@ export const translations: Translations = {
       online: '在线',
       offline: '离线',
       busy: '忙碌',
+      toggleTheme: '切换主题',
     },
     gallery: {
       title: '社区画廊',

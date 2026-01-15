@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeView, onViewChan
   ];
 
   return (
-    <div className="h-screen w-screen flex flex-col bg-gray-950 text-gray-200 overflow-hidden font-sans">
+    <div className="h-screen w-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-200 overflow-hidden font-sans transition-colors duration-200">
       {/* Top Bar: Stats */}
       <StatsHeader 
         metrics={metrics} 
@@ -32,8 +32,8 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeView, onViewChan
 
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <div className={`bg-gray-900 flex flex-col justify-between shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${
-            isNavOpen ? 'w-16 md:w-64 border-r border-gray-800' : 'w-0 border-r-0'
+        <div className={`bg-white dark:bg-gray-900 flex flex-col justify-between shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${
+            isNavOpen ? 'w-16 md:w-64 border-r border-gray-200 dark:border-gray-800' : 'w-0 border-r-0'
         }`}>
           <div>
             <nav className="flex flex-col p-2 space-y-1 mt-4">
@@ -46,11 +46,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeView, onViewChan
                     onClick={() => onViewChange(item.id)}
                     className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 group whitespace-nowrap ${
                       isActive
-                        ? 'bg-indigo-600/10 text-indigo-400 border border-indigo-600/20'
-                        : 'text-gray-400 hover:bg-gray-800 hover:text-gray-100'
+                        ? 'bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 border border-indigo-600/20'
+                        : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
                     }`}
                   >
-                    <Icon className={`w-5 h-5 min-w-[1.25rem] ${isActive ? 'text-indigo-400' : 'text-gray-500 group-hover:text-gray-300'}`} />
+                    <Icon className={`w-5 h-5 min-w-[1.25rem] ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300'}`} />
                     <span className="hidden md:block font-medium opacity-100 transition-opacity duration-200">{item.label}</span>
                   </button>
                 );
@@ -58,22 +58,19 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeView, onViewChan
             </nav>
           </div>
 
-          <div className="p-4 border-t border-gray-800 hidden md:block">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700">
-                <h4 className="text-sm font-bold text-white mb-1 whitespace-nowrap overflow-hidden text-ellipsis">{t('nav.openSource')}</h4>
-                <p className="text-xs text-gray-500 mb-3 whitespace-nowrap overflow-hidden text-ellipsis">{t('nav.supportProject')}</p>
-                <button className="w-full bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 rounded flex items-center justify-center gap-2 transition-colors">
-                    <Github className="w-3 h-3" /> {t('nav.starRepo')}
-                </button>
-            </div>
+          <div className="p-4 border-t border-gray-200 dark:border-gray-800 hidden md:block">
+            <button className="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white text-xs py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 transition-colors font-medium">
+                <Github className="w-4 h-4" /> 
+                <span className="whitespace-nowrap overflow-hidden text-ellipsis">{t('nav.starRepo')}</span>
+            </button>
             <div className="mt-4 text-center">
-                <p className="text-[10px] text-gray-600 whitespace-nowrap">{t('nav.version')}</p>
+                <p className="text-[10px] text-gray-400 dark:text-gray-600 whitespace-nowrap">{t('nav.version')}</p>
             </div>
           </div>
         </div>
 
         {/* Main Content Area */}
-        <main className="flex-1 relative overflow-hidden bg-gray-950">
+        <main className="flex-1 relative overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
           {children}
         </main>
       </div>

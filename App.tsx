@@ -5,6 +5,7 @@ import { Gallery } from './components/Gallery';
 import { Settings } from './components/Settings';
 import { ViewState, SystemMetrics, VoiceModel, PublishedWork } from './types';
 import { I18nProvider, useI18n } from './i18n/I18nContext';
+import { ThemeProvider } from './theme/ThemeContext';
 import { AVAILABLE_MODELS } from './constants';
 
 const AppContent: React.FC = () => {
@@ -119,9 +120,11 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <I18nProvider>
-      <AppContent />
-    </I18nProvider>
+    <ThemeProvider>
+      <I18nProvider>
+        <AppContent />
+      </I18nProvider>
+    </ThemeProvider>
   );
 };
 
