@@ -14,7 +14,11 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [language, setLanguage] = useState<Language>('en');
 
   const t = (path: string) => {
-    return path.split('.').reduce((obj, key) => obj?.[key], translations[language]) || path;
+    const result = path.split('.').reduce((obj, key) => obj?.[key], translations[language]);
+    if (result && typeof result === 'string') {
+      return result;
+    }
+    return '';
   };
 
   return (

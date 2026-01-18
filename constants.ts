@@ -1,6 +1,6 @@
-import { VoiceModel } from './types';
+import { PresetVoice } from './types';
 
-export const MOCK_VOICES: VoiceModel[] = [
+export const MOCK_VOICES: PresetVoice[] = [
   {
     id: '1',
     title: 'Cyberpunk Narrator',
@@ -11,7 +11,10 @@ export const MOCK_VOICES: VoiceModel[] = [
     duration: '00:12',
     likes: 1240,
     downloads: 500,
-    imageUrl: 'https://picsum.photos/200/200?random=1'
+    imageUrl: 'https://picsum.photos/200/200?random=1',
+    language: 'en',
+    promptText: 'Welcome to the neon-lit streets of a dystopian future.',
+    presetAudioPath: '/preset-voices/cyberpunk-narrator.wav'
   },
   {
     id: '2',
@@ -23,7 +26,10 @@ export const MOCK_VOICES: VoiceModel[] = [
     duration: '00:08',
     likes: 3400,
     downloads: 2100,
-    imageUrl: 'https://picsum.photos/200/200?random=2'
+    imageUrl: 'https://picsum.photos/200/200?random=2',
+    language: 'jp',
+    promptText: 'こんにちは！今日もいい天気ですね。',
+    presetAudioPath: '/preset-voices/anime-girl.wav'
   },
   {
     id: '3',
@@ -35,7 +41,10 @@ export const MOCK_VOICES: VoiceModel[] = [
     duration: '00:15',
     likes: 890,
     downloads: 320,
-    imageUrl: 'https://picsum.photos/200/200?random=3'
+    imageUrl: 'https://picsum.photos/200/200?random=3',
+    language: 'en',
+    promptText: 'Good evening, dear listeners. Welcome to our late night radio show.',
+    presetAudioPath: '/preset-voices/fm-host.wav'
   },
   {
     id: '4',
@@ -47,9 +56,12 @@ export const MOCK_VOICES: VoiceModel[] = [
     duration: '00:06',
     likes: 560,
     downloads: 120,
-    imageUrl: 'https://picsum.photos/200/200?random=4'
+    imageUrl: 'https://picsum.photos/200/200?random=4',
+    language: 'en',
+    promptText: 'By the beard of my ancestors! This is a mighty adventure!',
+    presetAudioPath: '/preset-voices/fantasy-dwarf.wav'
   },
-   {
+  {
     id: '5',
     title: 'News Anchor',
     author: 'DailyBrief',
@@ -59,38 +71,18 @@ export const MOCK_VOICES: VoiceModel[] = [
     duration: '00:10',
     likes: 1100,
     downloads: 800,
-    imageUrl: 'https://picsum.photos/200/200?random=5'
+    imageUrl: 'https://picsum.photos/200/200?random=5',
+    language: 'en',
+    promptText: 'Breaking news from around the world. Here is your morning briefing.',
+    presetAudioPath: '/preset-voices/news-anchor.wav'
   }
 ];
 
-export const AVAILABLE_MODELS = [
-  'CosyVoice-300M-SFT (Default)',
-  'CosyVoice-300M-Instruct',
-  'GPT-SoVITS-v2 (Plugin)'
-];
-
 export const TTS_LANGUAGES = [
-  { label: 'Chinese (中文)', value: 'zh' },
-  { label: 'English', value: 'en' },
-  { label: 'Japanese (日本語)', value: 'jp' },
-  { label: 'Korean (한국어)', value: 'ko' },
-  { label: 'German (Deutsch)', value: 'de' },
-  { label: 'Spanish (Español)', value: 'es' },
-  { label: 'French (Français)', value: 'fr' },
-  { label: 'Italian (Italiano)', value: 'it' },
-  { label: 'Russian (Русский)', value: 'ru' },
+  { label: 'Chinese (中文)', value: 'zh', supported: true, primary: true },
+  { label: 'English', value: 'en', supported: true, primary: true },
+  { label: 'Japanese (日本語)', value: 'jp', supported: true, primary: false },
+  { label: 'Korean (한국어)', value: 'ko', supported: true, primary: false },
 ];
 
-export const CHINESE_DIALECTS = [
-    { label: 'Guangdong (Yue)', value: 'yue' },
-    { label: 'Minnan', value: 'mn' },
-    { label: 'Sichuan', value: 'sichuan' },
-    { label: 'Dongbei', value: 'dongbei' },
-    { label: 'Shan3xi (Shaanxi)', value: 'shan3xi' },
-    { label: 'Shan1xi (Shanxi)', value: 'shan1xi' },
-    { label: 'Shanghai', value: 'shanghai' },
-    { label: 'Tianjin', value: 'tianjin' },
-    { label: 'Shandong', value: 'shandong' },
-    { label: 'Ningxia', value: 'ningxia' },
-    { label: 'Gansu', value: 'gansu' },
-];
+export const CHINESE_DIALECTS: { label: string; value: string }[] = [];
