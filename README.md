@@ -6,6 +6,8 @@ A local text-to-speech (TTS) application powered by CosyVoice 2.0, featuring pre
 
 ![Workbench](public/workbench-en.png)
 
+</div>
+
 ## Features
 
 ### 🎙️ Voice Synthesis
