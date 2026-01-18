@@ -59,8 +59,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeView, onViewChan
           </div>
 
           <div className="p-4 border-t border-gray-200 dark:border-gray-800 hidden md:block">
-            <button className="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white text-xs py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 transition-colors font-medium">
-                <Github className="w-4 h-4" /> 
+            <button
+              onClick={() => window.open('https://github.com/youyouhe/VoiceHub', '_blank')}
+              className="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white text-xs py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 transition-colors font-medium cursor-pointer"
+            >
+                <Github className="w-4 h-4" />
                 <span className="whitespace-nowrap overflow-hidden text-ellipsis">{t('nav.starRepo')}</span>
             </button>
             <div className="mt-4 text-center">
