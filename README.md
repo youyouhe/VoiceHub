@@ -142,3 +142,25 @@ MIT License - see LICENSE file for details.
 ## Acknowledgments
 
 - [CosyVoice](https://github.com/FunAudioLLM/CosyVoice) - The TTS engine powering this application
+
+## Roadmap
+
+### Phase 1: Community Token System
+- Design and implement VC token economics (1B total supply)
+- Provider Node service for distributed TTS workload
+- Consumer/Validator role system
+- Token mining and task pricing mechanism
+
+### Phase 2: Reputation System
+- Provider reputation scoring
+- Quality validation for synthesized audio
+- Dispute resolution mechanism
+
+### Phase 3: Advanced Features
+- Batch processing for large text inputs
+- Voice customization presets sharing
+- Community voting for voice quality
+
+## Contributing
+
+Contributions are welcome! Please read our contributing guidelines before submitting PRs.
