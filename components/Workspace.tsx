@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Play, Save, Wand2, Terminal, Trash2, Mic2, ChevronDown, PanelRightClose, PanelRightOpen, Share, X, Globe, Lock, Upload, Settings2, Volume2, UserPlus, User, CheckCircle, AlertCircle } from 'lucide-react';
+import { Play, Save, Wand2, Terminal, Trash2, Mic2, ChevronDown, PanelRightClose, PanelRightOpen, Share, X, Globe, Lock, Upload, Settings2, Volume2, UserPlus, User, CheckCircle, AlertCircle, Download } from 'lucide-react';
 import { VoiceModel, GenerationResult, PublishedWork, CosyVoiceMode, SpeakerItem, PresetVoice } from '../types';
 import { MOCK_VOICES, TTS_LANGUAGES, CHINESE_DIALECTS } from '../constants';
 import { useI18n } from '../i18n/I18nContext';
@@ -512,6 +512,21 @@ export const Workspace: React.FC<WorkspaceProps> = ({
     }
   };
 
+  const handleDownloadAudio = (item: {id: string; audioBase64: string; text: string}) => {
+    try {
+      const blob = base64ToBlobUrl(item.audioBase64);
+      const link = document.createElement('a');
+      link.href = blob;
+      link.download = `voicecraft_${item.id}.wav`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      addLog(`> Downloaded audio for: ${item.text}`);
+    } catch (err) {
+      addLog('> ERROR: Failed to download audio');
+    }
+  };
+
   const openPublishModal = (item: GenerationResult) => {
       setItemToPublish(item);
       setPublishTitle('');
@@ -985,6 +1000,13 @@ export const Workspace: React.FC<WorkspaceProps> = ({
                                             <Play className="w-3 h-3" /> {t('workspace.play')}
                                         </>
                                     )}
+                                </button>
+                                <button 
+                                    onClick={() => handleDownloadAudio(item)}
+                                    title={t('workspace.download')}
+                                    className="p-1.5 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                                >
+                                    <Download className="w-3 h-3" />
                                 </button>
                                 <button 
                                     onClick={() => openPublishModal(item)}

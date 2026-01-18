@@ -78,6 +78,7 @@ export const translations: Translations = {
       noGenerations: 'No generations yet.',
       toggleSidebar: 'Toggle Sidebar',
       publish: 'Publish',
+      download: 'Download',
       published: 'Published',
       publishModal: {
         title: 'Publish to Community',
@@ -257,6 +258,7 @@ export const translations: Translations = {
       noGenerations: '暂无生成记录。',
       toggleSidebar: '切换侧边栏',
       publish: '发布',
+      download: '下载',
       published: '已发布',
       publishModal: {
         title: '发布到社区',
