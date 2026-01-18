@@ -94,7 +94,7 @@ export const translations: Translations = {
       },
       logs: {
         init: '> VoiceCraft CE initialized.',
-        connected: '> Connected to Localhost:9880',
+        connected: '> Connected to backend',
         backendOffline: '> ERROR: Backend offline. Is CosyVoice service running?',
         emptyText: '> ERROR: Text input is empty.',
         noVoice: '> ERROR: No voice reference selected.',
@@ -274,7 +274,7 @@ export const translations: Translations = {
       },
       logs: {
         init: '> VoiceCraft CE 初始化完成。',
-        connected: '> 已连接至 Localhost:9880',
+        connected: '> 已连接至后端',
         backendOffline: '> 错误：后端离线。CosyVoice 服务是否正在运行？',
         emptyText: '> 错误：文本输入为空。',
         noVoice: '> 错误：未选择音色参考。',

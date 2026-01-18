@@ -226,8 +226,8 @@ export const Workspace: React.FC<WorkspaceProps> = ({
   const [logs, setLogs] = useState<string[]>([]);
 
   useEffect(() => {
-    setLogs([t('workspace.logs.init'), t('workspace.logs.connected')]);
-  }, [t]); 
+    setLogs([t('workspace.logs.init'), `> Connected to ${backendUrl}`]);
+  }, [t, backendUrl]);
 
   useEffect(() => {
     if (consoleEndRef.current) {
